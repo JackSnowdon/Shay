@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;600&display=swap');
+
+/* Background */
+
+.bg {
+    background-color: #f4f7ef;
+    font-family: 'Asap', sans-serif;
+    height: 100%;
+}
+
+
+/* Navbar */
+
+.nav-bg {
+    background-color: #3fdd17;
+}
+
+.nav-bg a {
+    color: #020704;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.nav-bg a:hover {
+    color: #45695b;
+}
+
+.nav-button {
+    color: #f4f4f4;
+}
+
+.navbar-toggler {
+    outline: none;
+}
+
+.logged-in {
+    color: #020704;
+    margin: 8px 2px;
+}
+
+
+/* Fonts and Texts */
+
+.headliner-text {
+    font-weight: 600;
+    font-size: 3.4rem;
+}
+
+
+/* Admin/Profile */
+
+.table {
+    background-color: #d2d2d2;
+}
+
+tr {
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.lifetime-totals {
+    font-size: 20px;
+}
+
+
+/* Footer */
+
+.social-icons a {
+    display: inline-block;
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: #495057;
+    color: #fff !important;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-icons a:last-child {
+    margin-right: 0;
+}
+
+.social-icons a:hover {
+    background-color: rgb(66, 209, 130);
+}

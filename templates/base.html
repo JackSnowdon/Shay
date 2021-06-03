@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block page_title %}{% endblock %}</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css" />
+</head>
+
+<body>
+
+    <!-- NavBar -->
+
+    <nav class="navbar navbar-expand-lg nav-bg fixed-top">
+        <a class="navbar-brand" href="{% url 'index' %}"><i class="fas fa-home"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars fa-lg nav-button"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %} {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+
+    <div class="bg">
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            {% if messages %}
+            <div class="text-center">
+                {% for message in messages %}
+                <h4 class="{{ message.tags }}">{{ message }}</h4>{% endfor %}
+            </div>
+            {% endif %} {% block content %} {% endblock %}
+        </div>
+
+        <!-- Footer -->
+
+        <div class="social-icons text-center mt-4">
+            <p class="small">Created By Jack Snowdon</p>
+            <a href="https://www.linkedin.com/in/jack-snowdon-5b903b183/" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/JackSnowdon" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://jacksnowdon.co.uk" target="_blank">
+                <i class="far fa-user"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/ccc410c56b.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    {% block script_js %} {% endblock script_js %}
+</body>
