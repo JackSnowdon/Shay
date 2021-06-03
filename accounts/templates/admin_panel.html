@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block page_title %} | Admin Panel{% endblock %} {% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <h1>Admin Panel:</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">User ID:</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Staff Access</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in profiles %}
+                <tr>
+                    <th scope="row">{{ p.pk }}</th>
+                    <td>{{ p.user }}</td>
+                    <td><a href="{% url 'change_staff_access' p.pk %}" class="">{{ p.staff_access }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static %} {% block page_title %} | {{ profile }}'s Profile{% endblock %} {% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="text-center">{{ profile }}'s profile</h2>
+    </div>
+</div>
+
+{% if user.profile.staff_access %}
+<div class="row">
+    <div class="col-12 text-center mb-3">
+        <a href="{% url 'admin_panel' %}" role="button" class="btn btn-success" id="admin-panel" aria-disabled="false">Admin Panel</a>
+    </div>
+</div>
+{% endif %} {% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block page_title %} | Login Page{% endblock %} {% block content %}
+<div class="row">
+    <div class="col-12">
+        <p class="profile-link">- If you haven't registered an account, you can sign do so here <a class="link-helper" href="{% url 'registration' %}">Here!</a></p>
+    </div>
+    <div class="col-10 mb-2 ml-1">
+        <form class="form-helper" method="POST">
+            {% csrf_token %} {{ login_form|crispy }}
+            <button type="submit" class="btn btn-success cart-add">Login</button>
+        </form>
+    </div>
+    <div class="col-12">
+        <p class="profile-link"><a href="{% url 'password_reset' %}">- Reset Password</a></p>
+    </div>
+
+</div>{% endblock %}
